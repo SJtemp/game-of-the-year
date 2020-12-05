@@ -1,0 +1,53 @@
+<DOCTYPE html>
+  <html lang="ru">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Играй "угадай число"</title>
+      <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+      <script>
+        // Math.floor округляет число
+        //   alert("text bitch");
+        //   alert(55);
+        //   let number = 5;
+        //   alert(number);
+
+        //   number = 10;
+        //   alert(number);
+        //   let number = prompt("Введите че нить");
+        //   alert(number);
+        //   const answer = Math.floor(Math.random() * 100) + 1; // [1, 100] от единицы до ста включительно
+        //   alert(answer);
+        const answer = Math.floor(Math.random() * 100) + 1;
+
+        while (true) {
+          const userAnswer = prompt(
+            'Отгадайте число от 1 до 100 и получишь мультик. Введи "выход", если зассал'
+          );
+          // alert(userAnswer);
+          if (userAnswer.toLowerCase() === "выход") {
+            alert("досвидос");
+            break;
+          }
+          const userNumber = Number.parseInt(userAnswer, 10);
+          if (Number.isNaN(userNumber)) {
+            alert("Ты тупой? Введи цифру");
+            continue;
+          }
+          if (userNumber > answer) {
+            alert("Попробуй число поменьше, дружок.");
+          } else if (userNumber < answer) {
+            alert("Попробуй число побольше, дружок");
+          } else {
+            alert("Молодец, но ты все равно ничего не получишь. хахаха");
+            window.location.href =
+              "https://www.youtube.com/watch?v=o7uDERvtqhc";
+            break;
+          }
+        }
+      </script>
+    </body>
+  </html>
+</DOCTYPE>
